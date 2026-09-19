@@ -12,6 +12,7 @@ const FILES = [
   "assets/doom-tech.svg",
   "assets/doom-projects.svg",
   "generated/doomsday-countdown.svg",
+  "generated/dashboard.svg",
 ];
 
 const MAP_START = "<!-- ASSET-MAP-START -->";
@@ -23,11 +24,10 @@ const entries = FILES.filter(existsSync).map((f) => {
   const uri = `data:image/svg+xml;base64,${Buffer.from(readFileSync(f)).toString("base64")}`;
   return `  "${f}": "${uri}",`;
 });
-// alias so the README's raw/output countdown URL also resolves locally pre-push
-const cdn = FILES.filter(existsSync).includes("generated/doomsday-countdown.svg");
-if (cdn) {
-  const uri = `data:image/svg+xml;base64,${Buffer.from(readFileSync("generated/doomsday-countdown.svg")).toString("base64")}`;
-  entries.push(`  "output/doomsday-countdown.svg": "${uri}",`);
+// aliases so the README's raw/output URLs also resolve locally pre-push
+for (const f of FILES.filter(existsSync).filter((f) => f.startsWith("generated/"))) {
+  const uri = `data:image/svg+xml;base64,${Buffer.from(readFileSync(f)).toString("base64")}`;
+  entries.push(`  "output/${f.split("/")[1]}": "${uri}",`);
 }
 
 const mapBlock = `${MAP_START}\nconst ASSETS = {\n${entries.join("\n")}\n};\n${MAP_END}`;

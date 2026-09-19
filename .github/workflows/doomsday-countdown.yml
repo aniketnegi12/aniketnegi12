@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "scripts/doomsday-countdown.mjs"
+      - "scripts/dashboard.mjs"
       - ".github/workflows/doomsday-countdown.yml"
 
 permissions:
@@ -25,6 +26,9 @@ jobs:
 
       - name: Render countdown SVG
         run: node scripts/doomsday-countdown.mjs
+
+      - name: Render dashboard SVG
+        run: node scripts/dashboard.mjs
 
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
