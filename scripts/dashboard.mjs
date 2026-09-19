@@ -255,7 +255,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" vi
 
   <!-- footer -->
   <line x1="20" y1="524" x2="740" y2="524" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
-  <text x="380" y="542" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 30 MINUTES · LEETCODE + GITHUB APIS</text>
+  <text x="380" y="542" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 5 MINUTES · LEETCODE + GITHUB APIS</text>
 </svg>
 `;
 

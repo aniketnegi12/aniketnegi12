@@ -2,7 +2,7 @@ name: Render assets
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # every 30 minutes
+    - cron: "*/5 * * * *" # every 5 minutes (GitHub minimum) — near-live LeetCode stats
   workflow_dispatch: # manual run
   push:
     branches: [main]
