@@ -1,0 +1,35 @@
+name: ⏳ Countdown
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch: # manual run
+  push:
+    branches: [main]
+    paths:
+      - "scripts/doomsday-countdown.mjs"
+      - ".github/workflows/doomsday-countdown.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Render countdown SVG
+        run: node scripts/doomsday-countdown.mjs
+
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: generated
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

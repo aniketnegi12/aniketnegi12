@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-label="Tech stack grid">
+  <defs>
+    <linearGradient id="iBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05060a"/>
+      <stop offset="1" stop-color="#0b1226"/>
+    </linearGradient>
+    <linearGradient id="iGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset=".45" stop-color="#f5d061"/>
+      <stop offset="1" stop-color="#8a5a12"/>
+    </linearGradient>
+    <linearGradient id="iBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9fe870"/>
+      <stop offset="1" stop-color="#f5d061"/>
+    </linearGradient>
+    <style>
+      .tile rect.box { transition: fill .25s ease, stroke .25s ease, stroke-width .25s ease; }
+      .tile:hover rect.box { fill: #14203a; stroke: #f5d061; stroke-width: 2; }
+      .tile:hover text.name { fill: #fff7d6; }
+    </style>
+  </defs>
+
+  <rect width="760" height="240" fill="url(#iBg)"/>
+  <text x="380" y="34" fill="url(#iGold)" font-family="'Segoe UI',Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="6" text-anchor="middle">TECH STACK</text>
+
+  <!-- row 1 -->
+  <g class="tile">
+    <rect class="box" x="30" y="56" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="46" y="84" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">Java</text>
+    <rect x="46" y="98" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="46" y="98" width="109" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="30" y="56" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;.18;.18;0;0" keyTimes="0;.02;.1;.13;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="210" y="56" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="226" y="84" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">C++</text>
+    <rect x="226" y="98" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="226" y="98" width="96" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="210" y="56" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.125;.145;.225;.25;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="390" y="56" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="406" y="84" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">JavaScript</text>
+    <rect x="406" y="98" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="406" y="98" width="90" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="390" y="56" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.25;.27;.35;.375;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="570" y="56" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="586" y="84" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">SQL</text>
+    <rect x="586" y="98" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="586" y="98" width="96" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="570" y="56" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.375;.395;.475;.5;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- row 2 -->
+  <g class="tile">
+    <rect class="box" x="30" y="140" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="46" y="168" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">HTML</text>
+    <rect x="46" y="182" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="46" y="182" width="115" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="30" y="140" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.5;.52;.6;.625;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="210" y="140" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="226" y="168" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">CSS</text>
+    <rect x="226" y="182" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="226" y="182" width="102" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="210" y="140" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.625;.645;.725;.75;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="390" y="140" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="406" y="168" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">Git</text>
+    <rect x="406" y="182" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="406" y="182" width="96" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="390" y="140" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0;0" keyTimes="0;.75;.77;.85;.875;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g class="tile">
+    <rect class="box" x="570" y="140" width="160" height="64" rx="10" fill="#0d1424" stroke="#3a4356" stroke-width="1.5"/>
+    <text class="name" x="586" y="168" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700">Linux</text>
+    <rect x="586" y="182" width="128" height="6" rx="3" fill="#1a2233"/>
+    <rect x="586" y="182" width="83" height="6" rx="3" fill="url(#iBar)"/>
+    <rect x="570" y="140" width="160" height="64" rx="10" fill="#f5d061" opacity="0" pointer-events="none">
+      <animate attributeName="opacity" values="0;0;.18;.18;0" keyTimes="0;.875;.895;.97;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

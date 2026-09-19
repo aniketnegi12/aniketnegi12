@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="Golden emblem">
+  <defs>
+    <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset=".45" stop-color="#f5d061"/>
+      <stop offset="1" stop-color="#8a5a12"/>
+    </linearGradient>
+    <linearGradient id="eye2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaffea"/>
+      <stop offset="1" stop-color="#57b457"/>
+    </linearGradient>
+  </defs>
+
+  <!-- hood -->
+  <path d="M110 14 C40 22 8 66 2 126 L2 208 L218 208 L218 126 C212 66 180 22 110 14 Z"
+        fill="#07090d" stroke="url(#gold2)" stroke-width="5"/>
+
+  <!-- mask plate -->
+  <path d="M110 46 C66 46 34 82 34 122 C34 158 68 172 110 172 C152 172 186 158 186 122 C186 82 154 46 110 46 Z"
+        fill="#101725" stroke="url(#gold2)" stroke-width="4"/>
+
+  <!-- rivets -->
+  <g fill="url(#gold2)">
+    <circle cx="72" cy="80" r="6"/>
+    <circle cx="148" cy="80" r="6"/>
+    <circle cx="54" cy="130" r="5"/>
+    <circle cx="166" cy="130" r="5"/>
+    <circle cx="110" cy="62" r="5"/>
+  </g>
+
+  <!-- eyes -->
+  <ellipse cx="80" cy="108" rx="24" ry="15" fill="url(#eye2)"/>
+  <ellipse cx="140" cy="108" rx="24" ry="15" fill="url(#eye2)"/>
+  <ellipse cx="80" cy="108" rx="24" ry="15" fill="none" stroke="#c9f5c9" stroke-opacity=".6" stroke-width="2"/>
+  <ellipse cx="140" cy="108" rx="24" ry="15" fill="none" stroke="#c9f5c9" stroke-opacity=".6" stroke-width="2"/>
+  <circle cx="80" cy="108" r="5" fill="#eaffea"/>
+  <circle cx="140" cy="108" r="5" fill="#eaffea"/>
+
+  <!-- frown grille -->
+  <g stroke="#8a5a12" stroke-width="4" stroke-linecap="round">
+    <path d="M76 152 L144 152"/>
+    <path d="M84 163 L136 163"/>
+  </g>
+</svg>
