@@ -40,7 +40,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="196" vi
 
   <text x="380" y="126" fill="${GREEN}" font-family="'Consolas', 'Courier New', monospace" font-size="46" font-weight="700" letter-spacing="4" text-anchor="middle">${bigText}</text>
 
-  <text x="380" y="164" fill="${GREY}" font-family="'Segoe UI', Arial, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">UPDATES EVERY 30 MINUTES</text>
+  <text x="380" y="164" fill="${GREY}" font-family="'Segoe UI', Arial, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">UPDATES EVERY 5 MINUTES</text>
 
   <g fill="${GOLD}">
     <polygon points="380,8 384,14 380,20 376,14"/>
