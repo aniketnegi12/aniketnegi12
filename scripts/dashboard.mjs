@@ -1,5 +1,6 @@
 // 📊 Developer Dashboard — renders assets/dashboard data from live APIs.
-// Sources: LeetCode stats API + GitHub public API (no tokens needed).
+// Sources: official LeetCode GraphQL API (live) + GitHub public API (no tokens needed).
+// Fallback: leetcode-stats-api.vercel.app only if the official API is unreachable.
 // Output: generated/dashboard.svg (published to the output branch by the workflow)
 const LC_USER = "aniket_negi";
 const GH_USER = "Aniketnegi12";
@@ -25,11 +26,15 @@ const rel = (ts) => {
   return `${Math.floor(d / 86400)}d ago`;
 };
 
-async function getJSON(url, timeoutMs = 10000) {
+async function getJSON(url, timeoutMs = 10000, init = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    const res = await fetch(url, { signal: ctrl.signal, headers: { "User-Agent": "profile-dashboard" } });
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      ...init,
+      headers: { "User-Agent": "Mozilla/5.0 (profile-dashboard)", "Referer": "https://leetcode.com", ...(init.headers || {}) },
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } finally {
@@ -37,16 +42,65 @@ async function getJSON(url, timeoutMs = 10000) {
   }
 }
 
+// Official LeetCode GraphQL — live data (the third-party stats API caches for hours).
+const YEAR = new Date().getUTCFullYear();
+async function fetchLeetCodeOfficial() {
+  const query = `
+    query($u:String!,$y:Int!,$py:Int!) {
+      matchedUser(username:$u) {
+        submitStats:submitStatsGlobal { acSubmissionNum { difficulty count } }
+        profile { ranking }
+        cal:userCalendar(year:$y) { streak totalActiveDays submissionCalendar }
+        calPrev:userCalendar(year:$py) { submissionCalendar }
+      }
+      recentAcSubmissionList(username:$u, limit:20) { title titleSlug timestamp }
+    }`;
+  const data = await getJSON("https://leetcode.com/graphql", 12000, {
+    method: "POST",
+    body: JSON.stringify({ query, variables: { u: LC_USER, y: YEAR, py: YEAR - 1 } }),
+    headers: { "Content-Type": "application/json" },
+  });
+  const mu = data?.data?.matchedUser;
+  if (!mu) throw new Error("leetcode: no matchedUser");
+  const counts = {};
+  for (const s of mu.submitStats?.acSubmissionNum ?? []) counts[s.difficulty] = s.count;
+  // merge this year's calendar over last year's so 12-week windows crossing Jan 1 stay correct
+  const submissionCalendar = {
+    ...JSON.parse(mu.calPrev?.submissionCalendar || "{}"),
+    ...JSON.parse(mu.cal?.submissionCalendar || "{}"),
+  };
+  return {
+    totalSolved: counts.All ?? 0,
+    easySolved: counts.Easy ?? 0,
+    mediumSolved: counts.Medium ?? 0,
+    hardSolved: counts.Hard ?? 0,
+    ranking: mu.profile?.ranking ?? null,
+    submissionCalendar,
+    recentSubmissions: (data?.data?.recentAcSubmissionList ?? []).map((s) => ({
+      title: s.title,
+      titleSlug: s.titleSlug,
+      timestamp: Number(s.timestamp),
+      statusDisplay: "Accepted", // recentAcSubmissionList is accepted-only
+      lang: "cpp",
+    })),
+  };
+}
+
 // ---------- gather data (never throw — fall back on misses) ----------
 let lc = { totalSolved: 0, easySolved: 0, mediumSolved: 0, hardSolved: 0, ranking: null, recentSubmissions: [], submissionCalendar: {} };
 let gh = { repos: 0, followers: 0, pushes: [] };
 try {
-  const [lcData, ghUser, ghEvents] = await Promise.all([
-    getJSON(`https://leetcode-stats-api.vercel.app/${LC_USER}`),
+  const [lcOfficial, ghUser, ghEvents] = await Promise.all([
+    fetchLeetCodeOfficial().catch(() => null),
     getJSON(`https://api.github.com/users/${GH_USER}`).catch(() => null),
     getJSON(`https://api.github.com/users/${GH_USER}/events/public?per_page=30`).catch(() => []),
   ]);
-  lc = { ...lc, ...lcData };
+  if (lcOfficial) {
+    lc = { ...lc, ...lcOfficial };
+  } else {
+    // fallback: cached third-party API (better than zeros if the official API hiccups)
+    try { lc = { ...lc, ...(await getJSON(`https://leetcode-stats-api.vercel.app/${LC_USER}`)) }; } catch {}
+  }
   if (ghUser) gh.repos = ghUser.public_repos ?? 0;
   if (ghUser) gh.followers = ghUser.followers ?? 0;
   gh.pushes = (Array.isArray(ghEvents) ? ghEvents : [])
