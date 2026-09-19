@@ -10,7 +10,9 @@
 ##  &nbsp;DEVELOPER DASHBOARD
 
 <div align="center">
-  <img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/dashboard.svg" alt="Developer dashboard — live LeetCode and GitHub stats" width="760">
+  <a href="https://leetcode.com/aniket_negi">
+    <img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/dashboard.svg" alt="Developer dashboard — live LeetCode and GitHub stats" width="760">
+  </a>
 </div>
 
 ##  &nbsp;ABOUT ME
@@ -58,6 +60,7 @@ current_project: cloud-bank
 | [PBL-OS-and-DBMS](https://github.com/Aniketnegi12/PBL-OS-and-DBMS) | OS + DBMS concepts demoed in JavaScript |
 | [PBL-DAA](https://github.com/Aniketnegi12/Akansh475/PBL-DAA) | Design & analysis of algorithms in C++ |
 | [pbl-java](https://github.com/Aniketnegi12/pbl-java) | Java programs and lab exercises |
+| [MOVIE_MANAGEMENT_SYSTEM](https://github.com/Aniketnegi12/MOVIE_MANAGEMENT_SYSTEM) | Movie management system — design docs first, code coming |
 
 ## ⚡ &nbsp;GITHUB STATS
 
