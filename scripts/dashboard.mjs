@@ -38,7 +38,7 @@ async function getJSON(url, timeoutMs = 10000) {
 }
 
 // ---------- gather data (never throw — fall back on misses) ----------
-let lc = { totalSolved: 0, easySolved: 0, mediumSolved: 0, hardSolved: 0, ranking: null, recentSubmissions: [] };
+let lc = { totalSolved: 0, easySolved: 0, mediumSolved: 0, hardSolved: 0, ranking: null, recentSubmissions: [], submissionCalendar: {} };
 let gh = { repos: 0, followers: 0, pushes: [] };
 try {
   const [lcData, ghUser, ghEvents] = await Promise.all([
@@ -77,6 +77,33 @@ const lcSolves = (lc.recentSubmissions ?? [])
 
 const activity = [...lcSolves, ...gh.pushes].slice(0, 5);
 
+// ---------- 12-week submission heatmap (12 weeks x 7 days, oldest -> newest) ----------
+const DAY = 86_400;
+const todayUTC = Math.floor(Date.now() / 1000 / DAY) * DAY;
+const cal = lc.submissionCalendar && typeof lc.submissionCalendar === "object" ? lc.submissionCalendar : {};
+const heatDays = Array.from({ length: 84 }, (_, i) => {
+  const ts = todayUTC - (83 - i) * DAY;
+  return { count: Number(cal[String(ts)] ?? 0) };
+});
+const heatTotal = heatDays.reduce((s, d) => s + d.count, 0);
+let bestStreak = 0;
+let curStreak = 0;
+for (const d of heatDays) {
+  curStreak = d.count > 0 ? curStreak + 1 : 0;
+  bestStreak = Math.max(bestStreak, curStreak);
+}
+const heatColor = (n) =>
+  n <= 0 ? "#10182a" : n <= 2 ? "#1d3a26" : n <= 5 ? "#2e6b3a" : n <= 9 ? "#57b457" : n <= 15 ? "#9fe870" : "#f5d061";
+const heatCells = heatDays
+  .map(
+    (d, i) =>
+      `<rect x="${(28 + i * 8.4).toFixed(1)}" y="476" width="7" height="8" rx="1.5" fill="${heatColor(d.count)}"${i === 83 ? ` stroke="#f5d061" stroke-width="1"` : ""}/>`
+  )
+  .join("\n  ");
+const heatLegend = [0, 1, 3, 6, 10, 16]
+  .map((n, i) => `<rect x="${78 + i * 16}" y="494" width="10" height="10" rx="2" fill="${heatColor(n)}"/>`)
+  .join("");
+
 // ---------- render ----------
 const rows = activity
   .map(
@@ -94,7 +121,7 @@ const activityBlock =
     ? rows
     : `<text x="46" y="300" fill="${GREY}" font-family="${MONO}" font-size="13">No recent activity — go build something.</text>`;
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" role="img" aria-label="Developer dashboard">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-label="Developer dashboard">
   <defs>
     <linearGradient id="dPanel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#05060a"/>
@@ -111,8 +138,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" vi
     </linearGradient>
   </defs>
 
-  <rect width="760" height="470" fill="url(#dPanel)"/>
-  <rect x="1.5" y="1.5" width="757" height="467" rx="12" fill="none" stroke="${GOLD}" stroke-width="2.5"/>
+  <rect width="760" height="560" fill="url(#dPanel)"/>
+  <rect x="1.5" y="1.5" width="757" height="557" rx="12" fill="none" stroke="${GOLD}" stroke-width="2.5"/>
 
   <!-- header -->
   <text x="30" y="36" fill="url(#dGold)" font-family="${MONO}" font-size="16" font-weight="700" letter-spacing="2">ANIKET // DEVELOPER DASHBOARD</text>
@@ -159,13 +186,26 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" vi
   <text x="46" y="272" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">RECENT ACTIVITY</text>
   ${activityBlock}
 
+  <!-- 12-week LC heatmap -->
+  <text x="46" y="468" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">LC ACTIVITY · LAST 12 WEEKS</text>
+  <text x="730" y="468" fill="${GOLD}" font-family="${MONO}" font-size="11" text-anchor="end">${heatTotal} SUBMISSIONS · ${bestStreak}D BEST STREAK</text>
+  <g aria-hidden="true">
+  ${heatCells}
+  </g>
+  <g font-family="${MONO}" font-size="10" fill="${GREY}">
+    <text x="46" y="503">LESS</text>
+    ${heatLegend}
+    <text x="178" y="503">MORE</text>
+    <text x="730" y="503" text-anchor="end">● TODAY</text>
+  </g>
+
   <!-- footer -->
-  <line x1="20" y1="440" x2="740" y2="440" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
-  <text x="380" y="458" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 30 MINUTES · LEETCODE + GITHUB APIS</text>
+  <line x1="20" y1="524" x2="740" y2="524" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+  <text x="380" y="542" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 30 MINUTES · LEETCODE + GITHUB APIS</text>
 </svg>
 `;
 
 import { writeFileSync, mkdirSync } from "node:fs";
 mkdirSync("generated", { recursive: true });
 writeFileSync("generated/dashboard.svg", svg);
-console.log(`📊 Dashboard rendered — ${solved} problems solved (${pct}% of ${MILESTONE}), ${gh.repos} repos, ${activity.length} activity items`);
+console.log(`📊 Dashboard rendered — ${solved} problems solved (${pct}% of ${MILESTONE}), ${gh.repos} repos, ${activity.length} activity items, heatmap ${heatTotal} subs/${bestStreak}d streak`);
