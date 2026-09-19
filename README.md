@@ -7,13 +7,13 @@
   <img alt="Aniket Singh Negi — banner" src="assets/doom-banner.svg" width="100%">
 </picture>
 
-## ⏳ &nbsp;COUNTDOWN
+##  &nbsp;COUNTDOWN
 
 <div align="center">
   <a href="https://www.imdb.com/title/tt24287156/"><img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/doomsday-countdown.svg" alt="Countdown to December 18, 2026" width="760"></a>
 </div>
 
-## 🧑‍💻 &nbsp;ABOUT ME
+##  &nbsp;ABOUT ME
 
 ```yaml
 name: Aniket Singh Negi
@@ -23,13 +23,13 @@ learning: OS, DBMS, Design & Analysis of Algorithms
 current_project: cloud-bank
 ```
 
-## 🖥️ &nbsp;TERMINAL
+##  &nbsp;TERMINAL
 
 <div align="center">
   <img src="assets/doom-terminal.svg" alt="Terminal typing animation" width="760">
 </div>
 
-## 🌐 &nbsp;TECH STACK
+##  &nbsp;TECH STACK
 
 <div align="center">
   <img src="assets/doom-tech.svg" alt="Tech stack — hover over the tiles" width="760">
@@ -46,7 +46,7 @@ current_project: cloud-bank
   <img src="https://img.shields.io/badge/Linux-07090d?style=for-the-badge&logo=linux&logoColor=9fe870" alt="Linux">
 </div>
 
-## 🧩 &nbsp;PROJECTS
+##  &nbsp;PROJECTS
 
 <div align="center">
   <img src="assets/doom-projects.svg" alt="Project cards" width="760">
