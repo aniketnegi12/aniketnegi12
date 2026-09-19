@@ -1,0 +1,171 @@
+// 📊 Developer Dashboard — renders assets/dashboard data from live APIs.
+// Sources: LeetCode stats API + GitHub public API (no tokens needed).
+// Output: generated/dashboard.svg (published to the output branch by the workflow)
+const LC_USER = "aniket_negi";
+const GH_USER = "Aniketnegi12";
+const MILESTONE = 500; // problem-solving milestone
+
+const GOLD = "#f5d061";
+const GREEN = "#9fe870";
+const GREY = "#7d8590";
+const WHITE = "#e6edf3";
+const TRACK = "#1a2233";
+const HARD = "#e06c6c";
+const MONO = "'Consolas','Courier New',monospace";
+const SANS = "'Segoe UI', Arial, sans-serif";
+
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const trunc = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
+const rel = (ts) => {
+  const t = typeof ts === "number" ? ts : Date.parse(ts) / 1000;
+  if (!Number.isFinite(t)) return "";
+  const d = Math.max(0, Date.now() / 1000 - t);
+  if (d < 3600) return `${Math.max(1, Math.floor(d / 60))}m ago`;
+  if (d < 86400) return `${Math.floor(d / 3600)}h ago`;
+  return `${Math.floor(d / 86400)}d ago`;
+};
+
+async function getJSON(url, timeoutMs = 10000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal, headers: { "User-Agent": "profile-dashboard" } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+// ---------- gather data (never throw — fall back on misses) ----------
+let lc = { totalSolved: 0, easySolved: 0, mediumSolved: 0, hardSolved: 0, ranking: null, recentSubmissions: [] };
+let gh = { repos: 0, followers: 0, pushes: [] };
+try {
+  const [lcData, ghUser, ghEvents] = await Promise.all([
+    getJSON(`https://leetcode-stats-api.vercel.app/${LC_USER}`),
+    getJSON(`https://api.github.com/users/${GH_USER}`).catch(() => null),
+    getJSON(`https://api.github.com/users/${GH_USER}/events/public?per_page=30`).catch(() => []),
+  ]);
+  lc = { ...lc, ...lcData };
+  if (ghUser) gh.repos = ghUser.public_repos ?? 0;
+  if (ghUser) gh.followers = ghUser.followers ?? 0;
+  gh.pushes = (Array.isArray(ghEvents) ? ghEvents : [])
+    .filter((e) => e.type === "PushEvent")
+    .filter((e) => !String(e.repo?.name ?? "").toLowerCase().endsWith(`${GH_USER.toLowerCase()}/${GH_USER.toLowerCase()}`)) // skip this profile repo
+    .slice(0, 2)
+    .map((e) => ({
+      text: `Pushed ${e.payload?.commits?.length ?? 1} commit${(e.payload?.commits?.length ?? 1) === 1 ? "" : "s"} → ${trunc(String(e.repo?.name ?? "").split("/").pop() || "repo", 24)}`,
+      ts: e.created_at,
+    }));
+} catch {
+  // fall through with defaults so the SVG always renders
+}
+
+const solved = lc.totalSolved;
+const pct = Math.min(100, Math.round((solved / MILESTONE) * 100));
+const barW = 440;
+const fillW = Math.round((barW * Math.min(solved, MILESTONE)) / MILESTONE);
+const rank = lc.ranking ? `RANK #${Number(lc.ranking).toLocaleString("en-US")}` : "GRINDING DAILY";
+const projLabel = `${gh.repos} PUBLIC REPOS`;
+const latestRepo = gh.pushes[0]?.text.split("→ ")[1] ?? "cloud-bank";
+
+const lcSolves = (lc.recentSubmissions ?? [])
+  .filter((s) => s.statusDisplay === "Accepted")
+  .filter((s, i, a) => a.findIndex((x) => x.titleSlug === s.titleSlug) === i) // dedupe
+  .slice(0, 3)
+  .map((s) => ({ text: `Solved: ${trunc(s.title, 34)} (${String(s.lang || "cpp").toUpperCase()})`, ts: s.timestamp }));
+
+const activity = [...lcSolves, ...gh.pushes].slice(0, 5);
+
+// ---------- render ----------
+const rows = activity
+  .map(
+    (a, i) => `
+  <g font-family="${MONO}" font-size="13.5">
+    <circle cx="46" cy="${286 + i * 30}" r="3.5" fill="${i % 2 === 0 ? GREEN : GOLD}"/>
+    <text x="60" y="${290 + i * 30}" fill="${WHITE}">${esc(a.text)}</text>
+    <text x="730" y="${290 + i * 30}" fill="${GREY}" font-size="11" text-anchor="end">${rel(a.ts)}</text>
+  </g>`
+  )
+  .join("\n");
+
+const activityBlock =
+  activity.length > 0
+    ? rows
+    : `<text x="46" y="300" fill="${GREY}" font-family="${MONO}" font-size="13">No recent activity — go build something.</text>`;
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" role="img" aria-label="Developer dashboard">
+  <defs>
+    <linearGradient id="dPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05060a"/>
+      <stop offset=".5" stop-color="#0b1226"/>
+      <stop offset="1" stop-color="#05060a"/>
+    </linearGradient>
+    <linearGradient id="dGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset="1" stop-color="#c9992f"/>
+    </linearGradient>
+    <linearGradient id="dBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9fe870"/>
+      <stop offset="1" stop-color="#f5d061"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="470" fill="url(#dPanel)"/>
+  <rect x="1.5" y="1.5" width="757" height="467" rx="12" fill="none" stroke="${GOLD}" stroke-width="2.5"/>
+
+  <!-- header -->
+  <text x="30" y="36" fill="url(#dGold)" font-family="${MONO}" font-size="16" font-weight="700" letter-spacing="2">ANIKET // DEVELOPER DASHBOARD</text>
+  <text x="730" y="36" fill="${GREY}" font-family="${MONO}" font-size="10" text-anchor="end">LIVE</text>
+  <circle cx="748" cy="32" r="4" fill="${GREEN}">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="20" y1="50" x2="740" y2="50" stroke="${GOLD}" stroke-opacity=".55" stroke-width="1.5"/>
+
+  <!-- stat columns -->
+  <g font-family="${SANS}">
+    <text x="46" y="80" fill="${GREY}" font-size="11" letter-spacing="3">LEETCODE</text>
+    <text x="46" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${solved}</text>
+    <text x="46" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">${rank}</text>
+
+    <text x="300" y="80" fill="${GREY}" font-size="11" letter-spacing="3">GITHUB</text>
+    <text x="300" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${gh.followers}</text>
+    <text x="300" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">FOLLOWERS</text>
+
+    <text x="520" y="80" fill="${GREY}" font-size="11" letter-spacing="3">PROJECTS</text>
+    <text x="520" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${gh.repos}</text>
+    <text x="520" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">LATEST: ${esc(trunc(latestRepo.toUpperCase(), 14))}</text>
+  </g>
+
+  <line x1="20" y1="156" x2="740" y2="156" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- problem solving progress -->
+  <text x="46" y="186" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">PROBLEM SOLVING</text>
+  <rect x="46" y="198" width="${barW}" height="12" rx="6" fill="${TRACK}"/>
+  <rect x="46" y="198" width="${fillW}" height="12" rx="6" fill="url(#dBar)">
+    <animate attributeName="width" from="0" to="${fillW}" dur="1.2s" fill="freeze"/>
+  </rect>
+  <text x="730" y="209" fill="${GOLD}" font-family="${MONO}" font-size="14" font-weight="700" text-anchor="end">${solved} / ${MILESTONE} · ${pct}%</text>
+  <g font-family="${MONO}" font-size="11">
+    <text x="46" y="232" fill="${GREEN}">EASY ${lc.easySolved}</text>
+    <text x="140" y="232" fill="${GOLD}">MEDIUM ${lc.mediumSolved}</text>
+    <text x="250" y="232" fill="${HARD}">HARD ${lc.hardSolved}</text>
+    <text x="360" y="232" fill="${GREY}">· 100% C++</text>
+  </g>
+
+  <line x1="20" y1="252" x2="740" y2="252" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- recent activity -->
+  <text x="46" y="272" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">RECENT ACTIVITY</text>
+  ${activityBlock}
+
+  <!-- footer -->
+  <line x1="20" y1="440" x2="740" y2="440" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+  <text x="380" y="458" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 30 MINUTES · LEETCODE + GITHUB APIS</text>
+</svg>
+`;
+
+import { writeFileSync, mkdirSync } from "node:fs";
+mkdirSync("generated", { recursive: true });
+writeFileSync("generated/dashboard.svg", svg);
+console.log(`📊 Dashboard rendered — ${solved} problems solved (${pct}% of ${MILESTONE}), ${gh.repos} repos, ${activity.length} activity items`);

@@ -7,6 +7,11 @@
   <img alt="Aniket Singh Negi — banner" src="assets/doom-banner.svg" width="100%">
 </picture>
 
+##  &nbsp;DEVELOPER DASHBOARD
+
+<div align="center">
+  <img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/dashboard.svg" alt="Developer dashboard — live LeetCode and GitHub stats" width="760">
+</div>
 
 ##  &nbsp;ABOUT ME
 
@@ -55,6 +60,11 @@ current_project: cloud-bank
 | [pbl-java](https://github.com/Aniketnegi12/pbl-java) | Java programs and lab exercises |
 
 ## ⚡ &nbsp;GITHUB STATS
+
+<div align="center">
+  <a href="https://leetcode.com/aniket_negi"><img src="https://img.shields.io/badge/LeetCode-aniket__negi-f5d061?style=for-the-badge&logo=leetcode&logoColor=9fe870&labelColor=07090d" alt="LeetCode profile"></a>&nbsp;
+  <a href="https://github.com/Aniketnegi12"><img src="https://img.shields.io/badge/GitHub-Aniketnegi12-f5d061?style=for-the-badge&logo=github&logoColor=9fe870&labelColor=07090d" alt="GitHub profile"></a>
+</div>
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=aniketnegi12&show_icons=true&hide_border=true&bg_color=0,07090d,0b1226&title_color=f5d061&icon_color=9fe870&text_color=c9d1d9&include_all_commits=true&count_private=true" height="165" alt="GitHub stats"><a href="https://github.com/Aniketnegi12?tab=repositories"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aniketnegi12&layout=compact&hide_border=true&bg_color=0,0b1226,07090d&title_color=9fe870&text_color=c9d1d9&langs_count=8" height="165" alt="Top languages"></a>
