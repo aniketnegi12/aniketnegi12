@@ -1,9 +1,9 @@
-name: 🐍 Contribution Snake
+name: Render assets
 
 on:
   schedule:
-    - cron: "17 3 * * *" # daily, at the witching hour
-  workflow_dispatch: # manual feast button
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch: # manual run
   push:
     branches: [main]
 
@@ -11,11 +11,23 @@ permissions:
   contents: write
 
 jobs:
-  generate:
+  render:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Release the snake upon the contribution grid
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Render countdown SVG
+        run: node scripts/doomsday-countdown.mjs
+
+      - name: Render dashboard SVG
+        run: node scripts/dashboard.mjs
+
+      - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -23,7 +35,10 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Entomb the remains in the output branch
+      - name: Collect all assets in one folder
+        run: cp generated/*.svg dist/
+
+      - name: Publish output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
