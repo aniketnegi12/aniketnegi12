@@ -7,11 +7,6 @@
   <img alt="Aniket Singh Negi — banner" src="assets/doom-banner.svg" width="100%">
 </picture>
 
-##  &nbsp;COUNTDOWN
-
-<div align="center">
-  <a href="https://www.imdb.com/title/tt24287156/"><img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/doomsday-countdown.svg" alt="Countdown to December 18, 2026" width="760"></a>
-</div>
 
 ##  &nbsp;ABOUT ME
 
