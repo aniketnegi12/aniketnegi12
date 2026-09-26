@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-label="Terminal typing animation">
   <defs>
     <linearGradient id="tPanel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05060a"/>
-      <stop offset=".5" stop-color="#0b1226"/>
-      <stop offset="1" stop-color="#05060a"/>
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset=".5" stop-color="#181513"/>
+      <stop offset="1" stop-color="#0a0908"/>
     </linearGradient>
-    <linearGradient id="tGold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff7d6"/>
-      <stop offset=".45" stop-color="#f5d061"/>
-      <stop offset="1" stop-color="#8a5a12"/>
+    <linearGradient id="tRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset=".45" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#7a1712"/>
     </linearGradient>
     <!-- typewriter reveal windows -->
     <clipPath id="type1"><rect x="40" y="56" width="0" height="26"><animate attributeName="width" from="0" to="62" dur="0.8s" begin="0.3s" fill="freeze"/></rect></clipPath>
@@ -17,62 +17,62 @@
   </defs>
 
   <rect width="760" height="300" fill="url(#tPanel)"/>
-  <rect x="1.5" y="1.5" width="757" height="297" rx="14" fill="none" stroke="url(#tGold)" stroke-width="2.5"/>
+  <rect x="1.5" y="1.5" width="757" height="297" rx="14" fill="none" stroke="url(#tRed)" stroke-width="2.5"/>
 
   <!-- title bar -->
-  <rect x="1.5" y="1.5" width="757" height="34" rx="13" fill="#0d1424"/>
-  <circle cx="26" cy="18.5" r="6" fill="#f5d061"/>
-  <circle cx="48" cy="18.5" r="6" fill="#9fe870"/>
-  <circle cx="70" cy="18.5" r="6" fill="#3d4757"/>
-  <text x="380" y="23" fill="#7d8590" font-family="'Consolas','Courier New',monospace" font-size="13" text-anchor="middle">aniket@portfolio: ~/projects</text>
-  <line x1="1.5" y1="35.5" x2="758.5" y2="35.5" stroke="url(#tGold)" stroke-width="1.5"/>
+  <rect x="1.5" y="1.5" width="757" height="34" rx="13" fill="#14110f"/>
+  <circle cx="26" cy="18.5" r="6" fill="#e8302a"/>
+  <circle cx="48" cy="18.5" r="6" fill="#3ecf6b"/>
+  <circle cx="70" cy="18.5" r="6" fill="#2a2724"/>
+  <text x="380" y="23" fill="#9c968d" font-family="'Consolas','Courier New',monospace" font-size="13" text-anchor="middle">aniket@portfolio: ~/projects</text>
+  <line x1="1.5" y1="35.5" x2="758.5" y2="35.5" stroke="url(#tRed)" stroke-width="1.5"/>
 
   <!-- line 1: whoami -->
   <g font-family="'Consolas','Courier New',monospace" font-size="16">
-    <text x="28" y="72" fill="#f5d061">$</text>
-    <text x="46" y="72" fill="#e6edf3" clip-path="url(#type1)">whoami</text>
+    <text x="28" y="72" fill="#e8302a">$</text>
+    <text x="46" y="72" fill="#f2efe9" clip-path="url(#type1)">whoami</text>
   </g>
-  <text x="46" y="98" fill="#9fe870" font-family="'Consolas','Courier New',monospace" font-size="15" opacity="0">Aniket Singh Negi — CS student, Dehradun<animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.3s" fill="freeze"/></text>
+  <text x="46" y="98" fill="#3ecf6b" font-family="'Consolas','Courier New',monospace" font-size="15" opacity="0">Aniket Singh Negi — CS student, Dehradun<animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.3s" fill="freeze"/></text>
 
   <!-- line 2: cat skills.txt -->
   <g font-family="'Consolas','Courier New',monospace" font-size="16">
-    <text x="28" y="134" fill="#f5d061">$</text>
-    <text x="46" y="134" fill="#e6edf3" clip-path="url(#type2)">cat skills.txt</text>
+    <text x="28" y="134" fill="#e8302a">$</text>
+    <text x="46" y="134" fill="#f2efe9" clip-path="url(#type2)">cat skills.txt</text>
   </g>
   <g font-family="'Consolas','Courier New',monospace" font-size="15" opacity="0">
     <animate attributeName="opacity" values="0;1" dur="0.3s" begin="3.4s" fill="freeze"/>
-    <text x="46" y="160" fill="#c9d1d9">▸ Java · C++ · JavaScript · SQL</text>
-    <text x="46" y="182" fill="#c9d1d9">▸ HTML · CSS · Git · Linux</text>
+    <text x="46" y="160" fill="#b6b0a7">▸ Java · C++ · JavaScript · SQL</text>
+    <text x="46" y="182" fill="#b6b0a7">▸ HTML · CSS · Git · Linux</text>
   </g>
 
   <!-- line 3: ls -->
   <g font-family="'Consolas','Courier New',monospace" font-size="16">
-    <text x="28" y="218" fill="#f5d061">$</text>
-    <text x="46" y="218" fill="#e6edf3" clip-path="url(#type3)">ls projects/ --sort=recent</text>
+    <text x="28" y="218" fill="#e8302a">$</text>
+    <text x="46" y="218" fill="#f2efe9" clip-path="url(#type3)">ls projects/ --sort=recent</text>
   </g>
-  <text x="46" y="244" fill="#9fe870" font-family="'Consolas','Courier New',monospace" font-size="15" opacity="0">cloud-bank/  pbl-java/  PBL-OS-and-DBMS/  PBL-DAA/<animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.0s" fill="freeze"/></text>
+  <text x="46" y="244" fill="#3ecf6b" font-family="'Consolas','Courier New',monospace" font-size="15" opacity="0">cloud-bank/  pbl-java/  PBL-OS-and-DBMS/  PBL-DAA/<animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.0s" fill="freeze"/></text>
 
   <!-- line 4: idle blinking prompt -->
   <g font-family="'Consolas','Courier New',monospace" font-size="16">
-    <text x="28" y="278" fill="#f5d061" opacity="0">$<animate attributeName="opacity" values="0;1" dur="0.2s" begin="6.5s" fill="freeze"/></text>
+    <text x="28" y="278" fill="#e8302a" opacity="0">$<animate attributeName="opacity" values="0;1" dur="0.2s" begin="6.5s" fill="freeze"/></text>
   </g>
-  <rect x="46" y="264" width="10" height="18" fill="#9fe870" opacity="0">
+  <rect x="46" y="264" width="10" height="18" fill="#e8302a" opacity="0">
     <animate attributeName="opacity" values="0;1" dur="0.2s" begin="6.5s" fill="freeze"/>
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="6.7s" repeatCount="indefinite"/>
   </rect>
 
   <!-- typing cursors (one per command, travel with the reveal) -->
-  <rect x="46" y="58" width="10" height="18" fill="#9fe870" opacity="0">
+  <rect x="46" y="58" width="10" height="18" fill="#e8302a" opacity="0">
     <animate attributeName="opacity" values="0;1" dur="0.01s" begin="0.3s" fill="freeze"/>
     <animate attributeName="x" from="46" to="104" dur="0.8s" begin="0.3s" fill="freeze"/>
     <animate attributeName="opacity" values="1;0" dur="0.01s" begin="1.25s" fill="freeze"/>
   </rect>
-  <rect x="46" y="120" width="10" height="18" fill="#9fe870" opacity="0">
+  <rect x="46" y="120" width="10" height="18" fill="#e8302a" opacity="0">
     <animate attributeName="opacity" values="0;1" dur="0.01s" begin="2.2s" fill="freeze"/>
     <animate attributeName="x" from="46" to="180" dur="1.0s" begin="2.2s" fill="freeze"/>
     <animate attributeName="opacity" values="1;0" dur="0.01s" begin="3.3s" fill="freeze"/>
   </rect>
-  <rect x="46" y="204" width="10" height="18" fill="#9fe870" opacity="0">
+  <rect x="46" y="204" width="10" height="18" fill="#e8302a" opacity="0">
     <animate attributeName="opacity" values="0;1" dur="0.01s" begin="4.4s" fill="freeze"/>
     <animate attributeName="x" from="46" to="276" dur="1.4s" begin="4.4s" fill="freeze"/>
     <animate attributeName="opacity" values="1;0" dur="0.01s" begin="5.9s" fill="freeze"/>

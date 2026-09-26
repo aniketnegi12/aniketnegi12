@@ -1,41 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="0 0 820 220" role="img" aria-label="Aniket Singh Negi — banner">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05060a"/>
-      <stop offset=".5" stop-color="#071309"/>
-      <stop offset="1" stop-color="#05060a"/>
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset=".5" stop-color="#181513"/>
+      <stop offset="1" stop-color="#0a0908"/>
     </linearGradient>
-    <linearGradient id="greenLine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#9fe870" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#9fe870"/>
-      <stop offset="1" stop-color="#9fe870" stop-opacity="0"/>
+    <linearGradient id="redLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8302a" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#e8302a" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="titleGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#eaffea"/>
-      <stop offset=".55" stop-color="#9fe870"/>
-      <stop offset="1" stop-color="#3f7d3f"/>
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#f2efe9"/>
+      <stop offset="1" stop-color="#b6b0a7"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="72%">
-      <stop offset="0" stop-color="#2e5c2e" stop-opacity=".45"/>
-      <stop offset="1" stop-color="#05060a" stop-opacity="0"/>
+      <stop offset="0" stop-color="#5c130e" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#0a0908" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <rect width="820" height="220" fill="url(#bgGrad)"/>
   <rect width="820" height="220" fill="url(#glow)"/>
 
-  <!-- top & bottom green rules -->
-  <rect x="0" y="0" width="820" height="3" fill="url(#greenLine)"/>
-  <rect x="0" y="217" width="820" height="3" fill="url(#greenLine)"/>
+  <!-- top & bottom red rules -->
+  <rect x="0" y="0" width="820" height="3" fill="url(#redLine)"/>
+  <rect x="0" y="217" width="820" height="3" fill="url(#redLine)"/>
 
   <!-- ornament above the name -->
-  <rect x="330" y="45" width="160" height="1.5" fill="url(#greenLine)"/>
-  <polygon points="410,38 416,46 410,54 404,46" fill="#9fe870"/>
+  <rect x="330" y="45" width="160" height="1.5" fill="url(#redLine)"/>
+  <polygon points="410,38 416,46 410,54 404,46" fill="#e8302a"/>
 
   <!-- text block (centered) -->
   <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
     <text x="410" y="112" fill="url(#titleGrad)" font-size="44" font-weight="800" letter-spacing="3">ANIKET SINGH NEGI</text>
-    <text x="410" y="146" fill="#c9d1d9" font-size="15" letter-spacing="2">CS STUDENT · GRAPHIC ERA HILL UNIVERSITY</text>
-    <text x="410" y="172" fill="#7d8590" font-size="13" letter-spacing="2">C++ · WEB · SYSTEMS</text>
+    <text x="410" y="146" fill="#e8302a" font-size="15" letter-spacing="2">CS STUDENT · GRAPHIC ERA HILL UNIVERSITY</text>
+    <text x="410" y="172" fill="#9c968d" font-size="13" letter-spacing="2">C++ · WEB · SYSTEMS</text>
   </g>
 </svg>

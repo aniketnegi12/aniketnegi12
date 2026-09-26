@@ -13,6 +13,7 @@ const FILES = [
   "assets/doom-projects.svg",
   "generated/doomsday-countdown.svg",
   "generated/dashboard.svg",
+  "generated/contributions.svg",
 ];
 
 const MAP_START = "<!-- ASSET-MAP-START -->";

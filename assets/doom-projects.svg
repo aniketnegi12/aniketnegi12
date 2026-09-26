@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="780" height="620" viewBox="0 0 780 620" role="img" aria-label="Project cards animation">
   <defs>
     <linearGradient id="pBg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05060a"/>
-      <stop offset="1" stop-color="#0b1226"/>
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset="1" stop-color="#181513"/>
     </linearGradient>
-    <linearGradient id="pGold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff7d6"/>
-      <stop offset=".45" stop-color="#f5d061"/>
-      <stop offset="1" stop-color="#8a5a12"/>
+    <linearGradient id="pRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset=".45" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#7a1712"/>
     </linearGradient>
     <linearGradient id="pShine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#f5d061" stop-opacity=".35"/>
+      <stop offset=".5" stop-color="#e8302a" stop-opacity=".35"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="pBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#9fe870"/>
-      <stop offset="1" stop-color="#f5d061"/>
+      <stop offset="0" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#ff6b61"/>
     </linearGradient>
   </defs>
 
@@ -26,84 +26,84 @@
 
   <!-- card 1: cloud-bank -->
   <g>
-    <rect x="24" y="30" width="352" height="160" rx="12" fill="#0d1424" stroke="url(#pGold)" stroke-width="1.5"/>
+    <rect x="24" y="30" width="352" height="160" rx="12" fill="#14110f" stroke="url(#pRed)" stroke-width="1.5"/>
     <rect x="24" y="30" width="352" height="4" rx="2" fill="url(#pBar)"/>
     <rect x="24" y="30" width="90" height="160" rx="12" fill="url(#pShine)"><animate attributeName="x" values="24;290;24" dur="6s" repeatCount="indefinite"/></rect>
-    <text x="44" y="66" fill="#f5d061" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">cloud-bank</text>
-    <text x="44" y="90" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Banking web app — accounts,</text>
-    <text x="44" y="108" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">transfers and dashboards.</text>
+    <text x="44" y="66" fill="#e8302a" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">cloud-bank</text>
+    <text x="44" y="90" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Banking web app — accounts,</text>
+    <text x="44" y="108" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">transfers and dashboards.</text>
     <g font-family="'Consolas',monospace" font-size="11">
-      <rect x="44" y="126" width="52" height="20" rx="10" fill="#10241a" stroke="#9fe870" stroke-width="1"/>
-      <text x="53" y="140" fill="#9fe870">HTML</text>
-      <rect x="104" y="126" width="56" height="20" rx="10" fill="#241d0e" stroke="#f5d061" stroke-width="1"/>
-      <text x="113" y="140" fill="#f5d061">CSS</text>
-      <rect x="168" y="126" width="58" height="20" rx="10" fill="#241d0e" stroke="#f5d061" stroke-width="1"/>
-      <text x="177" y="140" fill="#f5d061">JS</text>
+      <rect x="44" y="126" width="52" height="20" rx="10" fill="#0e1f12" stroke="#3ecf6b" stroke-width="1"/>
+      <text x="53" y="140" fill="#3ecf6b">HTML</text>
+      <rect x="104" y="126" width="56" height="20" rx="10" fill="#241110" stroke="#e8302a" stroke-width="1"/>
+      <text x="113" y="140" fill="#ff6b61">CSS</text>
+      <rect x="168" y="126" width="58" height="20" rx="10" fill="#241110" stroke="#e8302a" stroke-width="1"/>
+      <text x="177" y="140" fill="#ff6b61">JS</text>
     </g>
-    <text x="44" y="172" fill="#7d8590" font-family="'Consolas',monospace" font-size="12">⭐ semester project</text>
+    <text x="44" y="172" fill="#9c968d" font-family="'Consolas',monospace" font-size="12">⭐ semester project</text>
   </g>
 
   <!-- card 2: PBL-OS-and-DBMS -->
   <g>
-    <rect x="404" y="30" width="352" height="160" rx="12" fill="#0d1424" stroke="url(#pGold)" stroke-width="1.5"/>
+    <rect x="404" y="30" width="352" height="160" rx="12" fill="#14110f" stroke="url(#pRed)" stroke-width="1.5"/>
     <rect x="404" y="30" width="352" height="4" rx="2" fill="url(#pBar)"/>
     <rect x="404" y="30" width="90" height="160" rx="12" fill="url(#pShine)"><animate attributeName="x" values="404;670;404" dur="6s" begin="1.5s" repeatCount="indefinite"/></rect>
-    <text x="424" y="66" fill="#f5d061" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">PBL-OS-and-DBMS</text>
-    <text x="424" y="90" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">OS + DBMS concepts as a</text>
-    <text x="424" y="108" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">single JavaScript demo.</text>
+    <text x="424" y="66" fill="#e8302a" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">PBL-OS-and-DBMS</text>
+    <text x="424" y="90" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">OS + DBMS concepts as a</text>
+    <text x="424" y="108" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">single JavaScript demo.</text>
     <g font-family="'Consolas',monospace" font-size="11">
-      <rect x="424" y="126" width="70" height="20" rx="10" fill="#241d0e" stroke="#f5d061" stroke-width="1"/>
-      <text x="433" y="140" fill="#f5d061">JS</text>
-      <rect x="502" y="126" width="66" height="20" rx="10" fill="#10241a" stroke="#9fe870" stroke-width="1"/>
-      <text x="511" y="140" fill="#9fe870">SQL</text>
+      <rect x="424" y="126" width="70" height="20" rx="10" fill="#241110" stroke="#e8302a" stroke-width="1"/>
+      <text x="433" y="140" fill="#ff6b61">JS</text>
+      <rect x="502" y="126" width="66" height="20" rx="10" fill="#0e1f12" stroke="#3ecf6b" stroke-width="1"/>
+      <text x="511" y="140" fill="#3ecf6b">SQL</text>
     </g>
-    <text x="424" y="172" fill="#7d8590" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
+    <text x="424" y="172" fill="#9c968d" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
   </g>
 
   <!-- card 3: PBL-DAA -->
   <g>
-    <rect x="24" y="230" width="352" height="160" rx="12" fill="#0d1424" stroke="url(#pGold)" stroke-width="1.5"/>
+    <rect x="24" y="230" width="352" height="160" rx="12" fill="#14110f" stroke="url(#pRed)" stroke-width="1.5"/>
     <rect x="24" y="230" width="352" height="4" rx="2" fill="url(#pBar)"/>
     <rect x="24" y="230" width="90" height="160" rx="12" fill="url(#pShine)"><animate attributeName="x" values="24;290;24" dur="6s" begin="3s" repeatCount="indefinite"/></rect>
-    <text x="44" y="266" fill="#f5d061" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">PBL-DAA</text>
-    <text x="44" y="290" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Design &amp; analysis of algorithms</text>
-    <text x="44" y="308" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">implementations in C++.</text>
+    <text x="44" y="266" fill="#e8302a" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">PBL-DAA</text>
+    <text x="44" y="290" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Design &amp; analysis of algorithms</text>
+    <text x="44" y="308" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">implementations in C++.</text>
     <g font-family="'Consolas',monospace" font-size="11">
-      <rect x="44" y="326" width="52" height="20" rx="10" fill="#241d0e" stroke="#f5d061" stroke-width="1"/>
-      <text x="53" y="340" fill="#f5d061">C++</text>
+      <rect x="44" y="326" width="52" height="20" rx="10" fill="#241110" stroke="#e8302a" stroke-width="1"/>
+      <text x="53" y="340" fill="#ff6b61">C++</text>
     </g>
-    <text x="44" y="372" fill="#7d8590" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
+    <text x="44" y="372" fill="#9c968d" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
   </g>
 
   <!-- card 4: pbl-java -->
   <g>
-    <rect x="404" y="230" width="352" height="160" rx="12" fill="#0d1424" stroke="url(#pGold)" stroke-width="1.5"/>
+    <rect x="404" y="230" width="352" height="160" rx="12" fill="#14110f" stroke="url(#pRed)" stroke-width="1.5"/>
     <rect x="404" y="230" width="352" height="4" rx="2" fill="url(#pBar)"/>
     <rect x="404" y="230" width="90" height="160" rx="12" fill="url(#pShine)"><animate attributeName="x" values="404;670;404" dur="6s" begin="4.5s" repeatCount="indefinite"/></rect>
-    <text x="424" y="266" fill="#f5d061" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">pbl-java</text>
-    <text x="424" y="290" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Java programs and</text>
-    <text x="424" y="308" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">first-year lab exercises.</text>
+    <text x="424" y="266" fill="#e8302a" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">pbl-java</text>
+    <text x="424" y="290" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Java programs and</text>
+    <text x="424" y="308" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">first-year lab exercises.</text>
     <g font-family="'Consolas',monospace" font-size="11">
-      <rect x="424" y="326" width="60" height="20" rx="10" fill="#10241a" stroke="#9fe870" stroke-width="1"/>
-      <text x="433" y="340" fill="#9fe870">Java</text>
+      <rect x="424" y="326" width="60" height="20" rx="10" fill="#0e1f12" stroke="#3ecf6b" stroke-width="1"/>
+      <text x="433" y="340" fill="#3ecf6b">Java</text>
     </g>
-    <text x="424" y="372" fill="#7d8590" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
+    <text x="424" y="372" fill="#9c968d" font-family="'Consolas',monospace" font-size="12">⭐ coursework</text>
   </g>
 
   <!-- card 5: MOVIE_MANAGEMENT_SYSTEM (full width) -->
   <g>
-    <rect x="24" y="430" width="732" height="160" rx="12" fill="#0d1424" stroke="url(#pGold)" stroke-width="1.5"/>
+    <rect x="24" y="430" width="732" height="160" rx="12" fill="#14110f" stroke="url(#pRed)" stroke-width="1.5"/>
     <rect x="24" y="430" width="732" height="4" rx="2" fill="url(#pBar)"/>
     <rect x="24" y="430" width="90" height="160" rx="12" fill="url(#pShine)"><animate attributeName="x" values="24;690;24" dur="6s" begin="2.2s" repeatCount="indefinite"/></rect>
-    <text x="44" y="466" fill="#f5d061" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">MOVIE_MANAGEMENT_SYSTEM</text>
-    <text x="44" y="490" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Movie management system — design documents</text>
-    <text x="44" y="508" fill="#c9d1d9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">and project notes; implementation in progress.</text>
+    <text x="44" y="466" fill="#e8302a" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700">MOVIE_MANAGEMENT_SYSTEM</text>
+    <text x="44" y="490" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">Movie management system — design documents</text>
+    <text x="44" y="508" fill="#f2efe9" font-family="'Segoe UI',Arial,sans-serif" font-size="13">and project notes; implementation in progress.</text>
     <g font-family="'Consolas',monospace" font-size="11">
-      <rect x="44" y="526" width="56" height="20" rx="10" fill="#241d0e" stroke="#f5d061" stroke-width="1"/>
-      <text x="53" y="540" fill="#f5d061">DOC</text>
-      <rect x="108" y="526" width="64" height="20" rx="10" fill="#10241a" stroke="#9fe870" stroke-width="1"/>
-      <text x="117" y="540" fill="#9fe870">WIP</text>
+      <rect x="44" y="526" width="56" height="20" rx="10" fill="#241110" stroke="#e8302a" stroke-width="1"/>
+      <text x="53" y="540" fill="#ff6b61">DOC</text>
+      <rect x="108" y="526" width="64" height="20" rx="10" fill="#0e1f12" stroke="#3ecf6b" stroke-width="1"/>
+      <text x="117" y="540" fill="#3ecf6b">WIP</text>
     </g>
-    <text x="44" y="572" fill="#7d8590" font-family="'Consolas',monospace" font-size="12">⭐ new · Sep 2026</text>
+    <text x="44" y="572" fill="#9c968d" font-family="'Consolas',monospace" font-size="12">⭐ new · Sep 2026</text>
   </g>
 </svg>
