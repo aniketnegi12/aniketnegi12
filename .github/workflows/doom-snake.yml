@@ -27,13 +27,16 @@ jobs:
       - name: Render dashboard SVG
         run: node scripts/dashboard.mjs
 
+      - name: Render contributions SVG
+        run: node scripts/contributions.mjs
+
       - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?color_snake=#e8302a&color_dots=#ebedf0,#f3b8b4,#ec837d,#e34a43,#c2231e
+            dist/github-snake-dark.svg?color_snake=#ff6b61&color_dots=#1a1815,#3a1712,#6b1d17,#a8271f,#e8302a
 
       - name: Collect all assets in one folder
         run: cp generated/*.svg dist/

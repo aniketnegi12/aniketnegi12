@@ -1,26 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="Golden emblem">
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="Red emblem">
   <defs>
-    <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff7d6"/>
-      <stop offset=".45" stop-color="#f5d061"/>
-      <stop offset="1" stop-color="#8a5a12"/>
+    <linearGradient id="red2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset=".45" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#7a1712"/>
     </linearGradient>
     <linearGradient id="eye2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#eaffea"/>
-      <stop offset="1" stop-color="#57b457"/>
+      <stop offset="0" stop-color="#f2efe9"/>
+      <stop offset="1" stop-color="#a8271f"/>
     </linearGradient>
   </defs>
 
   <!-- hood -->
   <path d="M110 14 C40 22 8 66 2 126 L2 208 L218 208 L218 126 C212 66 180 22 110 14 Z"
-        fill="#07090d" stroke="url(#gold2)" stroke-width="5"/>
+        fill="#0a0908" stroke="url(#red2)" stroke-width="5"/>
 
   <!-- mask plate -->
   <path d="M110 46 C66 46 34 82 34 122 C34 158 68 172 110 172 C152 172 186 158 186 122 C186 82 154 46 110 46 Z"
-        fill="#101725" stroke="url(#gold2)" stroke-width="4"/>
+        fill="#14110f" stroke="url(#red2)" stroke-width="4"/>
 
   <!-- rivets -->
-  <g fill="url(#gold2)">
+  <g fill="url(#red2)">
     <circle cx="72" cy="80" r="6"/>
     <circle cx="148" cy="80" r="6"/>
     <circle cx="54" cy="130" r="5"/>
@@ -29,15 +29,15 @@
   </g>
 
   <!-- eyes -->
-  <ellipse cx="80" cy="108" rx="24" ry="15" fill="url(#eye2)"/>
-  <ellipse cx="140" cy="108" rx="24" ry="15" fill="url(#eye2)"/>
-  <ellipse cx="80" cy="108" rx="24" ry="15" fill="none" stroke="#c9f5c9" stroke-opacity=".6" stroke-width="2"/>
-  <ellipse cx="140" cy="108" rx="24" ry="15" fill="none" stroke="#c9f5c9" stroke-opacity=".6" stroke-width="2"/>
-  <circle cx="80" cy="108" r="5" fill="#eaffea"/>
-  <circle cx="140" cy="108" r="5" fill="#eaffea"/>
+  <ellipse cx="80" cy="108" rx="24" ry="15" fill="url(#eye2)" fill-opacity=".35"/>
+  <ellipse cx="140" cy="108" rx="24" ry="15" fill="url(#eye2)" fill-opacity=".35"/>
+  <ellipse cx="80" cy="108" rx="24" ry="15" fill="none" stroke="#ff6b61" stroke-opacity=".6" stroke-width="2"/>
+  <ellipse cx="140" cy="108" rx="24" ry="15" fill="none" stroke="#ff6b61" stroke-opacity=".6" stroke-width="2"/>
+  <circle cx="80" cy="108" r="5" fill="#f2efe9"/>
+  <circle cx="140" cy="108" r="5" fill="#f2efe9"/>
 
   <!-- frown grille -->
-  <g stroke="#8a5a12" stroke-width="4" stroke-linecap="round">
+  <g stroke="#7a1712" stroke-width="4" stroke-linecap="round">
     <path d="M76 152 L144 152"/>
     <path d="M84 163 L136 163"/>
   </g>

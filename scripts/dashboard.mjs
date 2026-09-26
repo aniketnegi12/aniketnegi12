@@ -6,12 +6,14 @@ const LC_USER = "aniket_negi";
 const GH_USER = "Aniketnegi12";
 const MILESTONE = 500; // problem-solving milestone
 
-const GOLD = "#f5d061";
-const GREEN = "#9fe870";
-const GREY = "#7d8590";
-const WHITE = "#e6edf3";
-const TRACK = "#1a2233";
-const HARD = "#e06c6c";
+// Portfolio palette — aniket-portfolio-nine-brown.vercel.app
+const RED = "#e8302a";
+const RED_SOFT = "#ff6b61";
+const GREEN = "#3ecf6b";
+const GREY = "#9c968d";
+const WHITE = "#f2efe9";
+const TRACK = "#24211e";
+const HARD = "#ffb3ae";
 const MONO = "'Consolas','Courier New',monospace";
 const SANS = "'Segoe UI', Arial, sans-serif";
 
@@ -147,11 +149,11 @@ for (const d of heatDays) {
   bestStreak = Math.max(bestStreak, curStreak);
 }
 const heatColor = (n) =>
-  n <= 0 ? "#10182a" : n <= 2 ? "#1d3a26" : n <= 5 ? "#2e6b3a" : n <= 9 ? "#57b457" : n <= 15 ? "#9fe870" : "#f5d061";
+  n <= 0 ? "#1a1815" : n <= 2 ? "#3a1712" : n <= 5 ? "#6b1d17" : n <= 9 ? "#a8271f" : n <= 15 ? "#e8302a" : "#ff6b61";
 const heatCells = heatDays
   .map(
     (d, i) =>
-      `<rect x="${(28 + i * 8.4).toFixed(1)}" y="476" width="7" height="8" rx="1.5" fill="${heatColor(d.count)}"${i === 83 ? ` stroke="#f5d061" stroke-width="1"` : ""}/>`
+      `<rect x="${(28 + i * 8.4).toFixed(1)}" y="476" width="7" height="8" rx="1.5" fill="${heatColor(d.count)}"${i === 83 ? ` stroke="${RED_SOFT}" stroke-width="1"` : ""}/>`
   )
   .join("\n  ");
 const heatLegend = [0, 1, 3, 6, 10, 16]
@@ -163,7 +165,7 @@ const rows = activity
   .map(
     (a, i) => `
   <g font-family="${MONO}" font-size="13.5">
-    <circle cx="46" cy="${286 + i * 30}" r="3.5" fill="${i % 2 === 0 ? GREEN : GOLD}"/>
+    <circle cx="46" cy="${286 + i * 30}" r="3.5" fill="${i % 2 === 0 ? GREEN : RED}"/>
     <text x="60" y="${290 + i * 30}" fill="${WHITE}">${esc(a.text)}</text>
     <text x="730" y="${290 + i * 30}" fill="${GREY}" font-size="11" text-anchor="end">${rel(a.ts)}</text>
   </g>`
@@ -178,47 +180,47 @@ const activityBlock =
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-label="Developer dashboard">
   <defs>
     <linearGradient id="dPanel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05060a"/>
-      <stop offset=".5" stop-color="#0b1226"/>
-      <stop offset="1" stop-color="#05060a"/>
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset=".5" stop-color="#181513"/>
+      <stop offset="1" stop-color="#0a0908"/>
     </linearGradient>
-    <linearGradient id="dGold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff7d6"/>
-      <stop offset="1" stop-color="#c9992f"/>
+    <linearGradient id="dRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset="1" stop-color="#c2231e"/>
     </linearGradient>
     <linearGradient id="dBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#9fe870"/>
-      <stop offset="1" stop-color="#f5d061"/>
+      <stop offset="0" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#ff6b61"/>
     </linearGradient>
   </defs>
 
   <rect width="760" height="560" fill="url(#dPanel)"/>
-  <rect x="1.5" y="1.5" width="757" height="557" rx="12" fill="none" stroke="${GOLD}" stroke-width="2.5"/>
+  <rect x="1.5" y="1.5" width="757" height="557" rx="12" fill="none" stroke="${RED}" stroke-width="2.5"/>
 
   <!-- header -->
-  <text x="30" y="36" fill="url(#dGold)" font-family="${MONO}" font-size="16" font-weight="700" letter-spacing="2">ANIKET // DEVELOPER DASHBOARD</text>
+  <text x="30" y="36" fill="url(#dRed)" font-family="${MONO}" font-size="16" font-weight="700" letter-spacing="2">ANIKET // DEVELOPER DASHBOARD</text>
   <text x="730" y="36" fill="${GREY}" font-family="${MONO}" font-size="10" text-anchor="end">LIVE</text>
   <circle cx="748" cy="32" r="4" fill="${GREEN}">
     <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <line x1="20" y1="50" x2="740" y2="50" stroke="${GOLD}" stroke-opacity=".55" stroke-width="1.5"/>
+  <line x1="20" y1="50" x2="740" y2="50" stroke="${RED}" stroke-opacity=".55" stroke-width="1.5"/>
 
   <!-- stat columns -->
   <g font-family="${SANS}">
     <text x="46" y="80" fill="${GREY}" font-size="11" letter-spacing="3">LEETCODE</text>
-    <text x="46" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${solved}</text>
-    <text x="46" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">${rank}</text>
+    <text x="46" y="114" fill="${WHITE}" font-family="${MONO}" font-size="30" font-weight="700">${solved}</text>
+    <text x="46" y="136" fill="${RED}" font-family="${MONO}" font-size="11" letter-spacing="1">${rank}</text>
 
     <text x="300" y="80" fill="${GREY}" font-size="11" letter-spacing="3">GITHUB</text>
-    <text x="300" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${gh.followers}</text>
-    <text x="300" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">FOLLOWERS</text>
+    <text x="300" y="114" fill="${WHITE}" font-family="${MONO}" font-size="30" font-weight="700">${gh.followers}</text>
+    <text x="300" y="136" fill="${RED}" font-family="${MONO}" font-size="11" letter-spacing="1">FOLLOWERS</text>
 
     <text x="520" y="80" fill="${GREY}" font-size="11" letter-spacing="3">PROJECTS</text>
-    <text x="520" y="114" fill="${GREEN}" font-family="${MONO}" font-size="30" font-weight="700">${gh.repos}</text>
-    <text x="520" y="136" fill="${GOLD}" font-family="${MONO}" font-size="11" letter-spacing="1">LATEST: ${esc(trunc(latestRepo.toUpperCase(), 14))}</text>
+    <text x="520" y="114" fill="${WHITE}" font-family="${MONO}" font-size="30" font-weight="700">${gh.repos}</text>
+    <text x="520" y="136" fill="${RED}" font-family="${MONO}" font-size="11" letter-spacing="1">LATEST: ${esc(trunc(latestRepo.toUpperCase(), 14))}</text>
   </g>
 
-  <line x1="20" y1="156" x2="740" y2="156" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+  <line x1="20" y1="156" x2="740" y2="156" stroke="${RED}" stroke-opacity=".35" stroke-width="1"/>
 
   <!-- problem solving progress -->
   <text x="46" y="186" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">PROBLEM SOLVING</text>
@@ -226,15 +228,15 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" vi
   <rect x="46" y="198" width="${fillW}" height="12" rx="6" fill="url(#dBar)">
     <animate attributeName="width" from="0" to="${fillW}" dur="1.2s" fill="freeze"/>
   </rect>
-  <text x="730" y="209" fill="${GOLD}" font-family="${MONO}" font-size="14" font-weight="700" text-anchor="end">${solved} / ${MILESTONE} · ${pct}%</text>
+  <text x="730" y="209" fill="${RED}" font-family="${MONO}" font-size="14" font-weight="700" text-anchor="end">${solved} / ${MILESTONE} · ${pct}%</text>
   <g font-family="${MONO}" font-size="11">
     <text x="46" y="232" fill="${GREEN}">EASY ${lc.easySolved}</text>
-    <text x="140" y="232" fill="${GOLD}">MEDIUM ${lc.mediumSolved}</text>
+    <text x="140" y="232" fill="${RED}">MEDIUM ${lc.mediumSolved}</text>
     <text x="250" y="232" fill="${HARD}">HARD ${lc.hardSolved}</text>
     <text x="360" y="232" fill="${GREY}">· 100% C++</text>
   </g>
 
-  <line x1="20" y1="252" x2="740" y2="252" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+  <line x1="20" y1="252" x2="740" y2="252" stroke="${RED}" stroke-opacity=".35" stroke-width="1"/>
 
   <!-- recent activity -->
   <text x="46" y="272" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">RECENT ACTIVITY</text>
@@ -242,7 +244,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" vi
 
   <!-- 12-week LC heatmap -->
   <text x="46" y="468" fill="${GREY}" font-family="${SANS}" font-size="11" letter-spacing="3">LC ACTIVITY · LAST 12 WEEKS</text>
-  <text x="730" y="468" fill="${GOLD}" font-family="${MONO}" font-size="11" text-anchor="end">${heatTotal} SUBMISSIONS · ${bestStreak}D BEST STREAK</text>
+  <text x="730" y="468" fill="${RED}" font-family="${MONO}" font-size="11" text-anchor="end">${heatTotal} SUBMISSIONS · ${bestStreak}D BEST STREAK</text>
   <g aria-hidden="true">
   ${heatCells}
   </g>
@@ -254,7 +256,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" vi
   </g>
 
   <!-- footer -->
-  <line x1="20" y1="524" x2="740" y2="524" stroke="${GOLD}" stroke-opacity=".35" stroke-width="1"/>
+  <line x1="20" y1="524" x2="740" y2="524" stroke="${RED}" stroke-opacity=".35" stroke-width="1"/>
   <text x="380" y="542" fill="${GREY}" font-family="${MONO}" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 5 MINUTES · LEETCODE + GITHUB APIS</text>
 </svg>
 `;
