@@ -30,6 +30,9 @@ jobs:
       - name: Render contributions SVG
         run: node scripts/contributions.mjs
 
+      - name: Render about panel SVG
+        run: node scripts/about.mjs
+
       - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:

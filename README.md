@@ -17,16 +17,9 @@
 
 ##  &nbsp;ABOUT ME
 
-```yaml
-name: Aniket Singh Negi
-role: CSE Student · Builder · Problem Solver
-college: Graphic Era Hill University, Dehradun
-location: Dehradun, Uttarakhand, India
-stack: Java, Python, Flask, Firebase, SQL
-learning: Data Structures & Algorithms, cloud fundamentals
-current_project: cloud-bank
-status: Open to internships & entry-level roles
-```
+<div align="center">
+  <img src="https://github.com/Aniketnegi12/aniketnegi12/raw/output/about.svg" alt="About me — aniket.yml" width="760">
+</div>
 
 ##  &nbsp;TERMINAL
 
