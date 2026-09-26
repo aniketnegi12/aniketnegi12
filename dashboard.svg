@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-label="Developer dashboard">
+  <defs>
+    <linearGradient id="dPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset=".5" stop-color="#181513"/>
+      <stop offset="1" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="dRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset="1" stop-color="#c2231e"/>
+    </linearGradient>
+    <linearGradient id="dBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#ff6b61"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="560" fill="url(#dPanel)"/>
+  <rect x="1.5" y="1.5" width="757" height="557" rx="12" fill="none" stroke="#e8302a" stroke-width="2.5"/>
+
+  <!-- header -->
+  <text x="30" y="36" fill="url(#dRed)" font-family="'Consolas','Courier New',monospace" font-size="16" font-weight="700" letter-spacing="2">ANIKET // DEVELOPER DASHBOARD</text>
+  <text x="730" y="36" fill="#9c968d" font-family="'Consolas','Courier New',monospace" font-size="10" text-anchor="end">LIVE</text>
+  <circle cx="748" cy="32" r="4" fill="#3ecf6b">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="20" y1="50" x2="740" y2="50" stroke="#e8302a" stroke-opacity=".55" stroke-width="1.5"/>
+
+  <!-- stat columns -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <text x="46" y="80" fill="#9c968d" font-size="11" letter-spacing="3">LEETCODE</text>
+    <text x="46" y="114" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="30" font-weight="700">166</text>
+    <text x="46" y="136" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="11" letter-spacing="1">RANK #1,056,497</text>
+
+    <text x="300" y="80" fill="#9c968d" font-size="11" letter-spacing="3">GITHUB</text>
+    <text x="300" y="114" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="30" font-weight="700">1</text>
+    <text x="300" y="136" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="11" letter-spacing="1">FOLLOWERS</text>
+
+    <text x="520" y="80" fill="#9c968d" font-size="11" letter-spacing="3">PROJECTS</text>
+    <text x="520" y="114" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="30" font-weight="700">6</text>
+    <text x="520" y="136" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="11" letter-spacing="1">LATEST: ANIKET-PORTFO…</text>
+  </g>
+
+  <line x1="20" y1="156" x2="740" y2="156" stroke="#e8302a" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- problem solving progress -->
+  <text x="46" y="186" fill="#9c968d" font-family="'Segoe UI', Arial, sans-serif" font-size="11" letter-spacing="3">PROBLEM SOLVING</text>
+  <rect x="46" y="198" width="440" height="12" rx="6" fill="#24211e"/>
+  <rect x="46" y="198" width="146" height="12" rx="6" fill="url(#dBar)">
+    <animate attributeName="width" from="0" to="146" dur="1.2s" fill="freeze"/>
+  </rect>
+  <text x="730" y="209" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14" font-weight="700" text-anchor="end">166 / 500 · 33%</text>
+  <g font-family="'Consolas','Courier New',monospace" font-size="11">
+    <text x="46" y="232" fill="#3ecf6b">EASY 39</text>
+    <text x="140" y="232" fill="#e8302a">MEDIUM 105</text>
+    <text x="250" y="232" fill="#ffb3ae">HARD 22</text>
+    <text x="360" y="232" fill="#9c968d">· 100% C++</text>
+  </g>
+
+  <line x1="20" y1="252" x2="740" y2="252" stroke="#e8302a" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- recent activity -->
+  <text x="46" y="272" fill="#9c968d" font-family="'Segoe UI', Arial, sans-serif" font-size="11" letter-spacing="3">RECENT ACTIVITY</text>
+  
+  <g font-family="'Consolas','Courier New',monospace" font-size="13.5">
+    <circle cx="46" cy="286" r="3.5" fill="#3ecf6b"/>
+    <text x="60" y="290" fill="#f2efe9">Solved: Evaluate the Bracket Pairs of a S… (CPP)</text>
+    <text x="730" y="290" fill="#9c968d" font-size="11" text-anchor="end">2h ago</text>
+  </g>
+
+  <g font-family="'Consolas','Courier New',monospace" font-size="13.5">
+    <circle cx="46" cy="316" r="3.5" fill="#e8302a"/>
+    <text x="60" y="320" fill="#f2efe9">Solved: Brace Expansion II (CPP)</text>
+    <text x="730" y="320" fill="#9c968d" font-size="11" text-anchor="end">1d ago</text>
+  </g>
+
+  <g font-family="'Consolas','Courier New',monospace" font-size="13.5">
+    <circle cx="46" cy="346" r="3.5" fill="#3ecf6b"/>
+    <text x="60" y="350" fill="#f2efe9">Solved: Smallest Index With Digit Sum Equ… (CPP)</text>
+    <text x="730" y="350" fill="#9c968d" font-size="11" text-anchor="end">2d ago</text>
+  </g>
+
+  <g font-family="'Consolas','Courier New',monospace" font-size="13.5">
+    <circle cx="46" cy="376" r="3.5" fill="#e8302a"/>
+    <text x="60" y="380" fill="#f2efe9">Pushed 1 commit → aniket-portfolio</text>
+    <text x="730" y="380" fill="#9c968d" font-size="11" text-anchor="end">1h ago</text>
+  </g>
+
+  <g font-family="'Consolas','Courier New',monospace" font-size="13.5">
+    <circle cx="46" cy="406" r="3.5" fill="#3ecf6b"/>
+    <text x="60" y="410" fill="#f2efe9">Pushed 1 commit → MOVIE_MANAGEMENT_SYSTEM</text>
+    <text x="730" y="410" fill="#9c968d" font-size="11" text-anchor="end">16d ago</text>
+  </g>
+
+  <!-- 12-week LC heatmap -->
+  <text x="46" y="468" fill="#9c968d" font-family="'Segoe UI', Arial, sans-serif" font-size="11" letter-spacing="3">LC ACTIVITY · LAST 12 WEEKS</text>
+  <text x="730" y="468" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="11" text-anchor="end">93 SUBMISSIONS · 27D BEST STREAK</text>
+  <g aria-hidden="true">
+  <rect x="28.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="36.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="44.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="53.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="61.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="70.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="78.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="86.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="95.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="103.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="112.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="120.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="128.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="137.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="145.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="154.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="162.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="170.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="179.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="187.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="196.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="204.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="212.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="221.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="229.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="238.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="246.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="254.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="263.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="271.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="280.0" y="476" width="7" height="8" rx="1.5" fill="#a8271f"/>
+  <rect x="288.4" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="296.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="305.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="313.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="322.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="330.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="338.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="347.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="355.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="364.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="372.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="380.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="389.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="397.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="406.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="414.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="422.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="431.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="439.6" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="448.0" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="456.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="464.8" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="473.2" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="481.6" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="490.0" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="498.4" y="476" width="7" height="8" rx="1.5" fill="#1a1815"/>
+  <rect x="506.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="515.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="523.6" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="532.0" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="540.4" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="548.8" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="557.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="565.6" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="574.0" y="476" width="7" height="8" rx="1.5" fill="#a8271f"/>
+  <rect x="582.4" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="590.8" y="476" width="7" height="8" rx="1.5" fill="#a8271f"/>
+  <rect x="599.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="607.6" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="616.0" y="476" width="7" height="8" rx="1.5" fill="#a8271f"/>
+  <rect x="624.4" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="632.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="641.2" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="649.6" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="658.0" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="666.4" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="674.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="683.2" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="691.6" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="700.0" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="708.4" y="476" width="7" height="8" rx="1.5" fill="#6b1d17"/>
+  <rect x="716.8" y="476" width="7" height="8" rx="1.5" fill="#3a1712"/>
+  <rect x="725.2" y="476" width="7" height="8" rx="1.5" fill="#6b1d17" stroke="#ff6b61" stroke-width="1"/>
+  </g>
+  <g font-family="'Consolas','Courier New',monospace" font-size="10" fill="#9c968d">
+    <text x="46" y="503">LESS</text>
+    <rect x="78" y="494" width="10" height="10" rx="2" fill="#1a1815"/><rect x="94" y="494" width="10" height="10" rx="2" fill="#3a1712"/><rect x="110" y="494" width="10" height="10" rx="2" fill="#6b1d17"/><rect x="126" y="494" width="10" height="10" rx="2" fill="#a8271f"/><rect x="142" y="494" width="10" height="10" rx="2" fill="#e8302a"/><rect x="158" y="494" width="10" height="10" rx="2" fill="#ff6b61"/>
+    <text x="178" y="503">MORE</text>
+    <text x="730" y="503" text-anchor="end">● TODAY</text>
+  </g>
+
+  <!-- footer -->
+  <line x1="20" y1="524" x2="740" y2="524" stroke="#e8302a" stroke-opacity=".35" stroke-width="1"/>
+  <text x="380" y="542" fill="#9c968d" font-family="'Consolas','Courier New',monospace" font-size="10" letter-spacing="2" text-anchor="middle">AUTO-UPDATES EVERY 5 MINUTES · LEETCODE + GITHUB APIS</text>
+</svg>
