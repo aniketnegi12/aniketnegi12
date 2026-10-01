@@ -55,8 +55,8 @@
 | [cloud-bank](https://github.com/Aniketnegi12/cloud-bank) | Banking web app built with HTML, CSS and JavaScript |
 | [PBL-OS-and-DBMS](https://github.com/Aniketnegi12/PBL-OS-and-DBMS) | OS + DBMS concepts demoed in JavaScript |
 | [PBL-DAA](https://github.com/Akansh475/PBL-DAA) | Design & analysis of algorithms in C++ |
-| [pbl-java](https://github.com/Aniketnegi12/pbl-java) | Java programs and lab exercises |
-| [MOVIE_MANAGEMENT_SYSTEM](https://github.com/Aniketnegi12/MOVIE_MANAGEMENT_SYSTEM) | Movie management system — design docs first, code coming |
+| [pbl-java](https://github.com/Aniketnegi12/pbl-java) · [▶ live demo](https://pbl-java.vercel.app/) | AI product price & profit optimization — PriceMind web console + REST API |
+| [MOVIE_MANAGEMENT_SYSTEM](https://github.com/Aniketnegi12/MOVIE_MANAGEMENT_SYSTEM) · [▶ live demo](https://movie-theta-liard.vercel.app/) | CineServe — movie ticket booking: LLD in C++, live bookable website, 19 tests |
 
 ## ⚡ &nbsp;GITHUB STATS
 
