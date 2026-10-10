@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-label="About me — aniket.yml">
+  <defs>
+    <linearGradient id="aPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0908"/>
+      <stop offset=".5" stop-color="#181513"/>
+      <stop offset="1" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="aRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b61"/>
+      <stop offset=".45" stop-color="#e8302a"/>
+      <stop offset="1" stop-color="#7a1712"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="340" fill="url(#aPanel)"/>
+
+  <!-- title bar -->
+  <rect x="1.5" y="1.5" width="757" height="34" rx="13" fill="#14110f"/>
+  <circle cx="26" cy="18.5" r="6" fill="#e8302a"/>
+  <circle cx="48" cy="18.5" r="6" fill="#3ecf6b"/>
+  <circle cx="70" cy="18.5" r="6" fill="#2a2724"/>
+  <text x="380" y="23" fill="#9c968d" font-family="'Consolas','Courier New',monospace" font-size="13" text-anchor="middle">aniket@portfolio: ~/about.yml</text>
+  <line x1="1.5" y1="35.5" x2="758.5" y2="35.5" stroke="url(#aRed)" stroke-width="1.5"/>
+
+  <rect x="1.5" y="1.5" width="757" height="337" rx="14" fill="none" stroke="url(#aRed)" stroke-width="2.5"/>
+
+  <text x="76" y="84" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">name:</text>
+  <text x="230" y="84" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">Aniket Singh Negi</text>
+  <text x="76" y="112" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">role:</text>
+  <text x="230" y="112" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">CSE Student · Builder · Problem Solver</text>
+  <text x="76" y="140" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">college:</text>
+  <text x="230" y="140" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">Graphic Era Hill University, Dehradun</text>
+  <text x="76" y="168" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">location:</text>
+  <text x="230" y="168" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">Dehradun, Uttarakhand, India</text>
+  <text x="76" y="196" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">stack:</text>
+  <text x="230" y="196" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">Java, Python, Flask, Firebase, SQL</text>
+  <text x="76" y="224" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">learning:</text>
+  <text x="230" y="224" fill="#f2efe9" font-family="'Consolas','Courier New',monospace" font-size="14.5">Data Structures &amp; Algorithms, cloud fundamentals</text>
+  <text x="76" y="252" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">current_project:</text>
+  <text x="230" y="252" fill="#ff6b61" font-family="'Consolas','Courier New',monospace" font-size="14.5">cloud-bank</text>
+  <text x="76" y="280" fill="#e8302a" font-family="'Consolas','Courier New',monospace" font-size="14.5">status:</text>
+  <text x="230" y="280" fill="#3ecf6b" font-family="'Consolas','Courier New',monospace" font-size="14.5">Open to internships &amp; entry-level roles</text>
+
+  <text x="732" y="324" fill="#9c968d" font-family="'Consolas','Courier New',monospace" font-size="10" letter-spacing="2" text-anchor="end">YML · UTF-8 · LF</text>
+  <polygon points="380,318 385,324 380,330 375,324" fill="#e8302a"/>
+</svg>
